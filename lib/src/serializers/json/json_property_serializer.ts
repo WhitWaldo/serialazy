@@ -76,6 +76,8 @@ export namespace JsonPropertySerializer {
 
     /** JSON property serializer options */
     export interface Options {
+        /** A projection to use. Default: "default" */
+        projection?: string;
         /** Indicates if property can be undefined. Default: false */
         optional?: boolean;
         /** Indicates if property can be null. Default: false */

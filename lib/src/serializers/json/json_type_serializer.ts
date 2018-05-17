@@ -11,6 +11,12 @@ type JsonTypeSerializer<TOriginal> = TypeSerializer<JsonType, TOriginal>;
 
 namespace JsonTypeSerializer {
 
+    /** JSON type serializer options */
+    export interface Options {
+        /** A projection to use. Default: "default" */
+        projection?: string;
+    }
+
     /** Try to pick a (possibly partial) type serializer for given value */
     export function pickForValue(value: any): Partial<JsonTypeSerializer<any>> {
 

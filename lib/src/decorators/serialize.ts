@@ -51,6 +51,7 @@ namespace Serialize {
     /** Decorator used to define a custom serializer for a given type. */
     export function Type<TSerialized extends JsonType, TOriginal>(
         customTypeSerializer: TypeSerializer<TSerialized, TOriginal> | Provider<TypeSerializer<TSerialized, TOriginal>>,
+        options?: JsonTypeSerializer.Options
     ) {
         return (ctor: Constructable.Default<TOriginal>) => {
             const customTypeSerializerProvider = typeof(customTypeSerializer) === 'function' ? customTypeSerializer : () => customTypeSerializer;
